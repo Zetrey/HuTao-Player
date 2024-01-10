@@ -1,4 +1,16 @@
-﻿body {
+﻿:root{
+    --h:3;
+    --theme-red-10-l2: hsl(var(--h), 70%, 70%);
+    --theme-red-10-l:hsl(var(--h), 73%, 62%);
+    --theme-red-08-l:hsla(var(--h), 70%, 60%, 0.8);
+    --theme-red-10:hsl(var(--h), 75%, 55%);
+    --theme-red-08:hsla(var(--h), 75%, 55%, 0.8);
+    --theme-red-06:hsla(var(--h), 75%, 55%, 0.6);
+    --theme-red-04:hsla(var(--h), 75%, 55%, 0.4);
+    --theme-red-03:hsla(var(--h), 75%, 55%, 0.3);
+}
+
+body {
     position: absolute;
     display: grid;
     grid-template-columns: 70% 30%;
@@ -23,7 +35,7 @@ header {
     margin: 10px 10px 10px 10px;
     background-color: #ffffffda;
     border-radius: 10px;
-    box-shadow: 0px 3px 15px rgba(232, 57, 26, 0.3);
+    box-shadow: 0px 3px 15px var(--theme-red-04);
 }
 
 .title-Box {
@@ -32,7 +44,7 @@ header {
     padding: 7.5px;
     font-family: ITCEDSCR;
     font-size: 30px;
-    color: #f14b0e;
+    color: var(--theme-red-10);
     cursor: default;
 }
 
@@ -55,7 +67,7 @@ header {
     height: 36px;
     width: 36px;
     left: 12.5px;
-    background-color: #f14b0e34;
+    background-color: var(--theme-red-03);
     border-radius: 10px;
 }
 
@@ -85,12 +97,16 @@ header {
     }
 }
 
+.button-detail{
+    fill: var(--theme-red-10);
+}
+
 .list-icon:hover {
     animation: rz .4s .1s;
 }
 
 .list-icon:hover .button-detail {
-    fill: rgba(226, 115, 100, 1);
+    fill: var(--theme-red-10-l);
     transition: all .2s;
 }
 
@@ -104,7 +120,7 @@ header {
 }
 
 .setting-icon:hover .button-detail {
-    fill: rgba(232, 57, 26, 0.7);
+    fill: var(--theme-red-10-l);
     transition: all .2s;
 }
 
@@ -127,7 +143,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: #ffffffda;
-    box-shadow: 0px 0px 16px rgba(232, 57, 26, 0.4);
+    box-shadow: 0px 0px 16px var(--theme-red-04);
     border-radius: 10px;
 }
 
@@ -175,12 +191,16 @@ header {
     margin: 0px;
 }
 
+.function-button-style{
+    fill: var(--theme-red-08);
+}
+
 .function-button-left:hover .function-button-style {
-    fill: rgba(232, 57, 26, 0.8)
+    fill: var(--theme-red-10)
 }
 
 .function-button-right:hover .function-button-style {
-    fill: rgba(232, 57, 26, 0.8)
+    fill: var(--theme-red-10)
 }
 
 .inf-icon {
@@ -203,7 +223,7 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    box-shadow: 0px 0px 20px rgba(232, 57, 26, 0.8);
+    box-shadow: 0px 0px 20px var(--theme-red-06);
 }
 
 .text-box {
@@ -215,14 +235,14 @@ header {
 
 h1 {
     font-family: yuanshen;
-    color: #ab3220;
+    color: var(--theme-red-10);
     text-align: center;
     margin: 0px;
 }
 
 .text-box>p {
     font-family: yuanshen;
-    color: #ab3220;
+    color: var(--theme-red-10);
     text-align: center;
     margin: 12px 0px 0px 0px;
 }
@@ -233,12 +253,12 @@ h1 {
     grid-template-columns: 162px auto 54px;
     grid-template-rows: auto;
     box-sizing: border-box;
-    height: 54px;
+    height: 60px;
     left: 0;
     background-color: #FFFFFFda;
-    box-shadow: 0px 8px 20px rgba(232, 57, 26, 0.3);
+    box-shadow: 0px 8px 20px var(--theme-red-04);
     border-radius: 10px;
-    padding: 0px 7px 0px 7px;
+    padding: 3px 7px 3px 7px;
 }
 
 .line-box {
@@ -254,10 +274,10 @@ h1 {
     box-sizing: border-box;
     cursor: pointer;
     border-style: solid;
-    border-color: rgba(232, 57, 26, 0.8);
+    border-color: var(--theme-red-08);
     border-width: 1px;
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(232, 57, 26, 0.3)
+    box-shadow: 0px 4px 10px var(--theme-red-04)
 }
 
 .dot {
@@ -267,10 +287,23 @@ h1 {
 }
 
 .dot-ico {
+    display: block;
     position: absolute;
     right: -7.5px;
     top: -5.5px;
     transition: all .2s;
+}
+
+.dot-dot{
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -6px;
+    top: -5.5px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 4px #8c8c8c;
 }
 
 .line-bar:hover .dot-ico {
@@ -292,7 +325,7 @@ h1 {
 
 #pro-line-pass {
     width: 30%;
-    background-color: rgba(232, 64, 26, 0.8);
+    background-color: var(--theme-red-08);
 }
 
 .music-button {
@@ -303,13 +336,13 @@ h1 {
     margin: 7px;
     border: none;
     border-radius: 50%;
-    background-color: rgba(232, 57, 26, 0.8);
+    background-color: var(--theme-red-10-l);
     cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(232, 57, 26, 0.3)
+    box-shadow: 0px 4px 10px var(--theme-red-04)
 }
 
 .music-button:hover {
-    background-color: rgba(232, 57, 26, 0.7);
+    background-color: var(--theme-red-10-l2);
     transition: all .2s;
 }
 
@@ -323,6 +356,42 @@ h1 {
     height: 20px;
 }
 
+.volumn-box{
+    position: relative;
+    padding: 7px;
+}
+#volumn-button {
+    margin: 0;
+}
+.volumn-line-bar{
+    display: block;
+    height: 40px;
+    width: 100%;
+    padding: 17px 17px 17px 21px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-style: solid;
+    border-color: var(--theme-red-10);
+    border-width: 1px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px var(--theme-red-04)
+}
+.volumn-line{
+    position: relative;
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #cacaca;
+    border-radius: 2px;
+}
+#volumn-line-pass{
+    width: 70%;
+    background-color: var(--theme-red-08);
+}
+#volumn-dot{
+    display: none;
+}
+
 .pad {
     box-sizing: border-box;
     top: 0;
@@ -334,7 +403,7 @@ h1 {
 #Player {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 54px;
+    grid-template-rows: auto 60px;
     padding: 2px 2.5px 10px 10px;
 }
 
@@ -347,7 +416,7 @@ h1 {
     padding: 7px 7px 7px 7px;
     background-color: #FFFFFFda;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(232, 57, 26, 0.3);
+    box-shadow: 0px 10px 20px hsla(var(--h), 53%, 49%, 0.4);
 }
 
 .list-head {
@@ -359,5 +428,5 @@ h1 {
     margin: 7px 7px 7px 7px;
     font-size: 22px;
     font-family: yuanshen;
-    color: #ab3220;
+    color: var(--theme-red-10);
 }
