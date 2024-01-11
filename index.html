@@ -31,7 +31,7 @@
         <div class="title-button-box">
             <div class="title-button-box-shader">
                 <div class="button-shader"></div>
-                <div class="ico-Box" id="setting" role="button" style="display: block;" title="设置">
+                <div class="ico-Box" id="setting" role="button" onclick="settingshow()" style="display: block;" title="设置">
                     <svg t="1704627353275" class="setting-icon" style="display: block;" viewBox="0 0 1024 1024"
                         version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4230" width="25" height="25">
                         <path class="button-detail"
@@ -39,7 +39,7 @@
                             p-id="4231"></path>
                     </svg>
                 </div>
-                <div class="ico-Box" id="list" role="button" style="display: block;" title="歌单列表">
+                <div class="ico-Box" id="list" role="button" onclick="listshow()" style="display: block;" title="歌单列表">
                     <svg t="1704699900183" class="list-icon" style="display: block;" viewBox="0 0 1024 1024"
                         version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4424" width="25" height="25">
                         <path class="button-detail"
@@ -181,12 +181,18 @@
         </div>
     </div>
     <!--边栏部分-->
-    <div class="pad" id="listBox">
-        <div class="list-box">
-            <div class="list-head">
+    <div class="pad" id="pad2">
+        <div class="pad2-box">
+        <div class="pad2-shader" id="list-shader">
+            <div class="pad2-head">
                 <p>歌单列表</p>
             </div>
         </div>
+        <div class="pad2-shader" id="setting-shader">
+            <div class="pad2-head">
+                <p>设置</p>
+            </div>
+        </div></div>
     </div>
 </body>
 
