@@ -1,13 +1,13 @@
 ﻿:root{
     --h: 3;
-    --theme-color-10-l2: hsl(var(--h), 70%, 70%);
-    --theme-color-10-l: hsl(var(--h), 73%, 62%);
-    --theme-color-08-l: hsla(var(--h), 70%, 60%, 0.8);
-    --theme-color-10: hsl(var(--h), 75%, 55%);
-    --theme-color-08: hsla(var(--h), 75%, 55%, 0.8);
-    --theme-color-06: hsla(var(--h), 75%, 55%, 0.6);
-    --theme-color-04: hsla(var(--h), 75%, 55%, 0.4);
-    --theme-color-03: hsla(var(--h), 75%, 55%, 0.3);
+    --theme-color-10-l2:    hwb(var(--h) 50% 5%);
+    --theme-color-10-l:     hwb(var(--h) 35% 5%);
+    --theme-color-08-l:     hwb(var(--h) 35% 5% / 0.8);
+    --theme-color-10:       hwb(var(--h) 25% 5%);
+    --theme-color-08:       hwb(var(--h) 25% 5% / 0.8);
+    --theme-color-06:       hwb(var(--h) 25% 5% / 0.6);
+    --theme-color-04:       hwb(var(--h) 25% 5% / 0.4);
+    --theme-color-03:       hwb(var(--h) 25% 5% / 0.3);
 }
 
 body {
@@ -378,7 +378,7 @@ h1 {
     border-color: var(--theme-color-10);
     border-width: 1px;
     border-radius: 20px;
-    box-shadow: 0px 4px 10px var(--theme-color-04)
+    box-shadow: 0px 4px 10px var(--theme-color-04);
 }
 .volumn-line{
     position: relative;
@@ -424,7 +424,7 @@ h1 {
     padding: 7px 7px 7px 7px;
     background-color: #FFFFFFda;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px hsla(var(--h), 53%, 49%, 0.4);
+    box-shadow: 0px 10px 20px hwb(var(--h), 53%, 49%, 0.4);
 }
 #setting-shader{
     display: none;
