@@ -69,6 +69,7 @@ header {
     left: 12.5px;
     background-color: var(--theme-color-03);
     border-radius: 10px;
+    transition: .4s;
 }
 
 .ico-Box {
@@ -259,6 +260,7 @@ h1 {
     box-shadow: 0px 8px 20px var(--theme-color-04);
     border-radius: 10px;
     padding: 3px 7px 3px 7px;
+    transition: .4s;
 }
 
 .line-box {
@@ -329,6 +331,7 @@ h1 {
 }
 
 .music-button {
+    position: relative;
     width: 40px;
     height: 40px;
     float: left;
@@ -366,6 +369,7 @@ h1 {
 #volumn-button {
     margin: 0;
     box-shadow: none;
+    z-index: 10;
 }
 .volumn-line-bar{
     display: block;
@@ -379,6 +383,7 @@ h1 {
     border-width: 1px;
     border-radius: 20px;
     box-shadow: 0px 4px 10px var(--theme-color-04);
+    transition: .4s;
 }
 .volumn-line{
     position: relative;
@@ -391,9 +396,6 @@ h1 {
 #volumn-line-pass{
     width: 70%;
     background-color: var(--theme-color-08);
-}
-#volumn-dot{
-    display: none;
 }
 
 .pad {

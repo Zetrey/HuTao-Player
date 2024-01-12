@@ -6,7 +6,6 @@ function volumnShow(){
 
     var dock = document.getElementsByClassName('music-dock');
     var bar = document.getElementsByClassName('volumn-line-bar');
-    var dot = document.getElementById('volumn-dot');
     var btnshader = document .getElementById('volumn-button');
     /*var box = document.getElementsByClassName('volumn-box');
     var width = box.offsetWidth;
@@ -15,7 +14,6 @@ function volumnShow(){
         if (width == 162){*/
             dock[0].style['grid-template-columns'] = '162px auto 162px';
             bar[0].style.padding = '17px 17px 17px 52px';
-            dot.style.display = 'block';
             btnshader.style['box-shadow'] = '1px 3px 10px ' + ThColor03;
             /*return;
         }
@@ -29,11 +27,9 @@ function volumnShow(){
 function volumnHide(){
     var dock = document.getElementsByClassName('music-dock');
     var bar = document.getElementsByClassName('volumn-line-bar');
-    var dot = document.getElementById('volumn-dot');
     var btnshader = document.getElementById('volumn-button');
     dock[0].style['grid-template-columns'] = '162px auto 54px';
     bar[0].style['padding'] = '17px 17px 17px 21px';
-    dot.style['display'] = 'none';
     btnshader.style['box-shadow'] = 'none';
 }
 //展示设置面板
