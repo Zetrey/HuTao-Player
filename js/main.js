@@ -1,5 +1,3 @@
-const root = document.querySelector(":root");
-const ThColor03 = getComputedStyle(root).getPropertyValue("--theme-color-03")
 
 //显示音量滑块
 function volumnShow(){
@@ -7,21 +5,9 @@ function volumnShow(){
     var dock = document.getElementsByClassName('music-dock');
     var bar = document.getElementsByClassName('volumn-line-bar');
     var btnshader = document .getElementById('volumn-button');
-    /*var box = document.getElementsByClassName('volumn-box');
-    var width = box.offsetWidth;
-    var x = 54;
-    function raf(){
-        if (width == 162){*/
-            dock[0].style['grid-template-columns'] = '162px auto 162px';
-            bar[0].style.padding = '17px 17px 17px 52px';
-            btnshader.style['box-shadow'] = '1px 3px 10px ' + ThColor03;
-            /*return;
-        }
-        dock[0].style['grid-template-columns'] = '162px auto '+`${x}px`;
-        x+=2;
-        window.requestAnimationFrame(raf);
-    }
-    window.requestAnimationFrame(raf);*/
+    dock[0].style['grid-template-columns'] = '162px auto 162px';
+    bar[0].style.padding = '17px 17px 17px 52px';
+    btnshader.style['box-shadow'] = '1px 3px 10px ' + ThColor03;
 }
 //隐藏音量滑块
 function volumnHide(){
