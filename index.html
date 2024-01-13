@@ -3,7 +3,8 @@
 
 <head>
     <title>HuTao Player</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/theme.css">
     <link rel="icon" type="image/x-icon" href="./ico/hutao.ico">
     <script src="./js/main.js"></script>
     <script src="./js/theme.js"></script>
@@ -62,7 +63,7 @@
     <!--主体部分-->
     <div class="pad" id="Player">
         <!--展示-->
-        <div class="show-box">
+        
             <div class="show-zone">
                 <div class="show-box-all">
                     <!--左侧功能栏-->
@@ -110,7 +111,7 @@
                     <p>by zetrey</p>
                 </div>
             </div>
-        </div>
+        
         <!--底栏-->
         <div class="music-dock">
             <!--按钮-->
@@ -182,17 +183,60 @@
     </div>
     <!--边栏部分-->
     <div class="pad" id="pad2">
-        <div class="pad2-box">
-        <div class="pad2-shader" id="list-shader">
-            <div class="pad2-head">
-                <p>歌单列表</p>
+        <div class="pad2-shader">
+            <!--歌单列表-->
+            <div class="pad2-box" id="list-shader">
+                <div class="pad2-head">
+                    <p class="pad2-title"><span class="linefect">歌单列表</span></p>
+                </div>
+            </div>
+            <!--设置-->
+            <div class="pad2-box" id="setting-shader">
+                <div class="pad2-head">
+                    <p class="pad2-title"><span class="linefect">设置</span></p>
+                </div>
+                <div class="setting-box-01">
+                    <p1><span class="linefect">主题颜色</span></p1>
+                    <div class="color-selector">
+                        <span class="cspan" id="cs1"></span>
+                        <span class="cspan" id="cs2"></span>
+                        <span class="cspan" id="cs3"></span>
+                        <span class="cspan" id="cs4"></span>
+                        <span class="cspan" id="cs5"></span>
+                        <span class="cspan" id="cs6"></span>
+                        <span class="cspan" id="cs7"></span>
+                        <div></div>
+                        <button class="cmore" id="cmore" onclick="moreColorShow()">更多</button>
+                    </div>
+                    <div class="cut-rule"></div> 
+                    <div class="more-color-box">
+                        <div class="color-line-box1">
+                            <span class="color-line-icoh"></span>
+                            <div class="color-line-shaderh">
+                                <div class="color-line-dot" id="cldot1"></div>
+                            </div>
+                            <i>3deg</i>
+                        </div>
+                        <div class="color-line-box2">
+                            <span class="color-line-icow"></span>
+                            <div class="color-line-shaderw">
+                                <div class="color-line-dot" id="cldot2"></div>
+                            </div>
+                            <i>25%</i>
+                        </div>
+                        <div class="color-line-box3">
+                            <span class="color-line-icob"></span>
+                            <div class="color-line-shaderb">
+                                <div class="color-line-dot" id="cldot3"></div>
+                            </div>
+                            <i>5%</i>
+                        </div>
+                        <span class="color-showing"></span>
+                        
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="pad2-shader" id="setting-shader">
-            <div class="pad2-head">
-                <p>设置</p>
-            </div>
-        </div></div>
     </div>
 </body>
 

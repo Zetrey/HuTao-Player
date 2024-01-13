@@ -1,15 +1,4 @@
-﻿:root{
-    --h: 3;
-    --theme-color-10-l2:    hwb(var(--h) 50% 5%);
-    --theme-color-10-l:     hwb(var(--h) 35% 5%);
-    --theme-color-08-l:     hwb(var(--h) 35% 5% / 0.8);
-    --theme-color-10:       hwb(var(--h) 25% 5%);
-    --theme-color-08:       hwb(var(--h) 25% 5% / 0.8);
-    --theme-color-06:       hwb(var(--h) 25% 5% / 0.6);
-    --theme-color-04:       hwb(var(--h) 25% 5% / 0.4);
-    --theme-color-03:       hwb(var(--h) 25% 5% / 0.3);
-}
-
+﻿
 body {
     position: absolute;
     display: grid;
@@ -18,7 +7,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    backdrop-filter: blur(40px) brightness(85%);
+    backdrop-filter: blur(40px) brightness(var(--img-bg));
     background-size: 100%, 100%;
     background-position: center center;
     background-attachment: fixed;
@@ -33,7 +22,7 @@ header {
     width: 100% - 14px;
     height: 50px;
     margin: 10px 10px 10px 10px;
-    background-color: #ffffffda;
+    background-color: var(--theme-bg-85);
     border-radius: 10px;
     box-shadow: 0px 3px 15px var(--theme-color-04);
 }
@@ -69,7 +58,7 @@ header {
     left: 12.5px;
     background-color: var(--theme-color-03);
     border-radius: 10px;
-    transition: .4s;
+    transition: ease .2s;
 }
 
 .ico-Box {
@@ -129,22 +118,16 @@ header {
     transition: all .4s;
 }
 
-.show-box {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 0px 0px 10px 0px;
-}
-
 .show-zone {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 70% auto;
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: #ffffffda;
-    box-shadow: 0px 0px 16px var(--theme-color-04);
+    background-color: var(--theme-bg-85);
+    box-shadow: 0px 3px 15px var(--theme-color-04);
     border-radius: 10px;
 }
 
@@ -232,16 +215,17 @@ header {
     width: 100%;
     height: auto;
     top: 70%;
+    cursor: default;
 }
 
-h1 {
+.text-box > h1 {
     font-family: yuanshen;
     color: var(--theme-color-10);
     text-align: center;
     margin: 0px;
 }
 
-.text-box>p {
+.text-box > p {
     font-family: yuanshen;
     color: var(--theme-color-10);
     text-align: center;
@@ -249,6 +233,7 @@ h1 {
 }
 
 .music-dock {
+    margin: 10px 0px 0px 0px;
     position: relative;
     display: grid;
     grid-template-columns: 162px auto 54px;
@@ -256,11 +241,11 @@ h1 {
     box-sizing: border-box;
     height: 60px;
     left: 0;
-    background-color: #FFFFFFda;
-    box-shadow: 0px 8px 20px var(--theme-color-04);
+    background-color: var(--theme-bg-85);
+    box-shadow: 0px 3px 15px var(--theme-color-04);
     border-radius: 10px;
     padding: 3px 7px 3px 7px;
-    transition: .4s;
+    transition: .3s;
 }
 
 .line-box {
@@ -403,30 +388,32 @@ h1 {
     top: 0;
     width: 100%;
     height: 100%;
-    padding: 2px 10px 10px 10px;
+    padding: 0px 10px 10px 10px;
 }
-.pad2-box{
+.pad2-shader{
     position: relative;
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
+    padding: 7px 10px 7px 10px;
+    background-color: var(--theme-bg-85);
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px var(--theme-color-04);
+    transition: .2s;
 }
 #Player {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 60px;
-    padding: 2px 2.5px 10px 10px;
+    grid-template-rows: auto 70px;
+    padding: 0px 2px 10px 10px;
 }
-.pad2-shader {
+.pad2-box {
     display: block;
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    overflow: hidden;
-    padding: 7px 7px 7px 7px;
-    background-color: #FFFFFFda;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px hwb(var(--h), 53%, 49%, 0.4);
+
 }
 #setting-shader{
     display: none;
@@ -435,11 +422,211 @@ h1 {
 .pad2-head {
     width: 100%;
     background-color: rgba(255, 255, 255, 0);
+    cursor: default;
 }
 
-.pad2-head > p {
+.pad2-title {
     margin: 7px 7px 7px 7px;
     font-size: 22px;
     font-family: yuanshen;
     color: var(--theme-color-10);
+}
+.linefect{
+    background: linear-gradient(to right, var(--theme-color-10-l), var(--theme-color-10-l)) no-repeat right bottom;
+    background-size: 0px 2px;
+    transition: background-size .3s;
+}
+.linefect:hover{
+    background-position: left bottom;
+    background-size: 100% 2px;
+}
+
+.setting-box-01{
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 78px;  /*76px*/
+    padding: 10px;
+    margin: 15px 0px 0px 0px;
+    background-color: var(--theme-bg-10);
+    box-shadow: 0px 0px 15px var(--theme-color-03);
+    border-radius: 10px;
+    transition: .3s;
+}
+.setting-box-01 > p1{
+    display: block;
+    color: var(--theme-color-10);
+    margin: 2px 0px 2px 0px;
+    font-family: yuanshen;
+    cursor: default;
+}
+.color-selector{
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    width: 100%;
+    height: 32px;
+    padding: 12px 0px 0px 0px;
+    grid-template-columns: repeat(7,30px) auto 50px;
+}
+.color-selector > div{
+    width: 100%;
+    height: 100%
+}
+.cspan{
+    display: block;
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#cs1{
+    background-color: hwb(3 25% 5%);
+}
+#cs6{
+    background-color: hwb(275 33% 3%);
+}
+#cs4{
+    background-color: hwb(118 27% 12%);
+}
+#cs5{
+    background-color: hwb(228 38% 0%);
+}
+#cs3{
+    background-color: hwb(48 25% 0%);
+}
+#cs2{
+    background-color: rgb(255, 145, 72);
+}
+#cs7{
+    background-color: hwb(337 40% 0%);
+}
+.cut-rule{
+    width: 100%;
+    height: 1px;
+    margin: 15px 2px 0px 2px;
+    background-color: #c9c9c9;
+}
+.cmore{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    padding: 2px 0px 0px 0px;
+    top: -2.5px;
+    display: block;
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: yuanshen;
+    color: var(--theme-color-10);
+}
+.cmore:hover{
+    background-color: #f2f2f2;
+}
+.more-color-box{
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    height: 102px;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    grid-template-columns: auto 102px;
+    grid-template-rows: 34px 34px 34px;
+}
+.more-color-box > div{
+    box-sizing: border-box;
+    display: grid;
+    position: absolute;
+    width: 100%;
+    height: 34px;
+    padding: 11px 7px 11px 0px;
+    grid-template-columns: 30px auto 50px;
+}
+.color-line-box1{
+    grid-area: 1/1 / 2/2;
+}
+.color-line-box2{
+    grid-area: 2/1 / 3/2;
+}
+.color-line-box3{
+    grid-area: 3/1 / 4/2;
+}
+.color-showing{
+    grid-area: 1/2 / 4/3;
+}
+.color-showing{
+    position: relative;
+    box-sizing: border-box;
+    margin: 10px;
+    height: 82px;
+    width: 82px;
+    background-color: var(--theme-color-10);
+    border-radius: 50%;
+    border: 12px solid var(--theme-color-10-l2);
+}
+.more-color-box > div > span{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 20px;
+    top: -4px;
+    left: 0px;
+    border-radius: 50%;
+    border: 1px solid #2e2e2e;
+}
+.color-line-icoh{
+    background-color: hwb(var(--h) 0% 0%);
+}
+.color-line-icow {
+    background-color: white;
+}
+.color-line-icob {
+    background-color: black;
+}
+.more-color-box > div > div{
+    position: relative;
+    display: block;
+    height: 12px;
+    width: 100%;
+    border-radius: 6px;
+}
+.color-line-shaderh{
+    background: linear-gradient(in hwb to right, red, green, blue, red);
+}
+.color-line-shaderw{
+    background: linear-gradient(in hwb to right, gray, white);
+}
+.color-line-shaderb{
+    background: linear-gradient(in hwb to right, black, gray);
+}
+.more-color-box > div > i{
+    position: relative;
+    box-sizing: border-box;
+    font-size: 12px;
+    top: -2px;
+    margin: 0px 0px 0px 7px;
+}
+.color-line-dot{
+    height: 8px;
+    width: 8px;
+    background-color: #fff;
+    margin: 2px;
+    border-radius: 50%;
+}
+#cldot1{
+    position: absolute;
+    left: 1%;
+}
+#cldot2{
+    position: absolute;
+    left: 25%;
+}
+#cldot3{
+    position: absolute;
+    right: 5%;
 }
