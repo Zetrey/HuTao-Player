@@ -2,7 +2,6 @@
 var root = document.querySelector(":root")
 const ThColor03 = getComputedStyle(root).getPropertyValue("--theme-color-03")
 
-
 //显示音量滑块
 function volumnShow(){
 
