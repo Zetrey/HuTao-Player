@@ -14,12 +14,13 @@
 
     --theme-bg-10: #fff;
     --theme-bg-09: #ffffffe6;
-    --theme-bg-85: #ffffffda;
+    --theme-bg-85: #ffffffc4;
     --theme-bg-08: #ffffffcc;
+    --theme-negative-04: #00000040;
 
     --theme-gray:#cacaca;
 
-    --img-bg: 85%;
+    --img-bg-brightness: 85%;
 }
 html[data-theme = 'dark']{
     --h: 3;         --w: 25%;       --b: 5%;
@@ -39,8 +40,9 @@ html[data-theme = 'dark']{
     --theme-bg-09: #494949e6;
     --theme-bg-85: #494949d0;
     --theme-bg-08: #494949cc;
+    --theme-negative-04: #FFFFFF60;
 
     --theme-gray: #cacaca;
 
-    --img-bg: 40%;
+    --img-bg-brightness: 40%;
 }

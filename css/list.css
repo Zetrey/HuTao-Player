@@ -1,0 +1,40 @@
+.my-list-box{
+    position: relative;
+    display: grid;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--theme-bg-10);
+    cursor: default;
+    grid-template-columns: 40px auto 20px;
+    grid-template-rows: 25px 15px;
+    margin: 10px 0px 0px 0px;
+}
+.my-list-box>p2{
+    display: block;
+    position: relative;
+    font-size: 17px;
+    font-family: yuanshen;
+    color: var(--theme-color-10);
+    margin: 2px 0px 2px 0px;
+    cursor: pointer;
+    width: fit-content;
+    height: 25px;
+}
+.my-list-box>p3{
+    display: block;
+    position: relative;
+    font-size: 12px;
+    font-family: yuanshen;
+    color: var(--theme-color-10);
+    width: fit-content;
+    height: 25px;
+}
+.list-img{
+    grid-area: 1/1 / 3/2;
+}
+.list-inf{
+    grid-area: 1/3 / 3/4;
+}
