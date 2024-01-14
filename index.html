@@ -5,6 +5,7 @@
     <title>HuTao Player</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <link rel="stylesheet" type="text/css" href="./css/theme.css">
+    <link rel="stylesheet" type="text/css" href="./css/list.css"
     <link rel="icon" type="image/x-icon" href="./ico/hutao.ico">
     <script src="./js/main.js"></script>
     <script src="./js/theme.js"></script>
@@ -183,30 +184,78 @@
     <!--边栏部分-->
     <div class="pad" id="pad2">
         <div class="pad2-shader">
+            <div style="display: block; position: relative;width: 100%;height: 100%;">
             <!--歌单列表-->
             <div class="pad2-box" id="list-shader">
+                <!--歌单列表标题-->
                 <div class="pad2-head">
                     <p class="pad2-title"><span class="linefect">歌单列表</span></p>
+                </div>
+                <!--我喜欢的音乐-->
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">我喜欢的音乐</span></p2>
+                    <p3>3首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
+                </div>
+                <div class="my-list-box">
+                    <div class="list-img"></div>
+                    <p2><span class="linefect">New1</span></p2>
+                    <p3>0首</p3>
+                    <button class="list-inf"></button>
                 </div>
             </div>
             <!--设置-->
             <div class="pad2-box" id="setting-shader">
+                <!--设置标题-->
                 <div class="pad2-head">
                     <p class="pad2-title"><span class="linefect">设置</span></p>
                 </div>
+                <!--主题颜色-->
                 <div class="setting-box-01">
                     <p1><span class="linefect">主题颜色</span></p1>
                     <div class="color-selector">
-                        <span class="cspan" id="cs1"></span>
-                        <span class="cspan" id="cs2"></span>
-                        <span class="cspan" id="cs3"></span>
-                        <span class="cspan" id="cs4"></span>
-                        <span class="cspan" id="cs5"></span>
-                        <span class="cspan" id="cs6"></span>
-                        <span class="cspan" id="cs7"></span>
-                        <div></div>
-                        <button class="cmore" id="cmore" onclick="moreColorShow()">更多</button>
+                        <span class="cspan" id="cs1" role="button" onclick="themeColor(0)"></span>
+                        <span class="cspan" id="cs2" role="button" onclick="themeColor(1)"></span>
+                        <span class="cspan" id="cs3" role="button" onclick="themeColor(2)"></span>
+                        <span class="cspan" id="cs4" role="button" onclick="themeColor(3)"></span>
+                        <span class="cspan" id="cs5" role="button" onclick="themeColor(4)"></span>
+                        <span class="cspan" id="cs6" role="button" onclick="themeColor(5)"></span>
+                        <span class="cspan" id="cs7" role="button" onclick="themeColor(6)"></span>
+                        <div><!--//弹性盒子//--></div>
+                        <button class="cmore" id="cmore" onclick="themeColor(7)"></button>
                     </div>
+                    <!--//分割线//-->
                     <div class="cut-rule"></div> 
                     <div class="more-color-box">
                         <div class="color-line-box1">
@@ -230,12 +279,20 @@
                             </div>
                             <i>5%</i>
                         </div>
-                        <span class="color-showing"></span>
-                        
+                        <span class="color-showing">
+                            <span></span>
+                        </span>
                     </div>
                 </div>
+                <!--暗色模式-->
+                <div class="setting-box-02">
+                    <p1><span class="linefect">暗色模式</span></p1>
+                    <button class="dkmod-bt" onclick="darkMod()">
+                        <div id="dkmod-bt-dot"></div>
+                    </button>
+                </div>
             </div>
-        </div>
+        </div></div>
     </div>
 </body>
 
