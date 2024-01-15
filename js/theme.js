@@ -1,8 +1,9 @@
-let themecolor = 0;
+var root = document.querySelector(":root");
+var themecolor = 0;
 function themeColor(x = 0) {
-    var box = document.getElementsByClassName('setting-box-01');
-    var mb = document.getElementById('cmore');
-    var cs = document.getElementsByClassName('cspan');
+    let box = document.getElementsByClassName('setting-box-01');
+    let mb = document.getElementById('cmore');
+    let cs = document.getElementsByClassName('cspan');
     if (x == themecolor) {
         return;
     }
@@ -24,7 +25,6 @@ function themeColor(x = 0) {
             cs[themecolor].style.border = 'none';
             themecolor = x;
         }
-        var root = document.querySelector(":root");
         switch (x) {
             case 0: root.style.setProperty("--h", "3");
                 root.style.setProperty("--w", "25%");
@@ -58,15 +58,24 @@ function themeColor(x = 0) {
                 break;
         }
     }
+    const colorPanel = {
+        dot1: document.getElementById('cldot1'),
+        dot2: document.getElementById('cldot2'),
+        dot3: document.getElementById('cldot3'),
+        per1: getComputedStyle(root).getPropertyValue('--h'),
+        per2: getComputedStyle(root).getPropertyValue('--w'),
+        per3: getComputedStyle(root).getPropertyValue('--b'),
+    }
+    colorPanel.dot1.style.left = `per1%`;
+    colorPanel.dot2.style.left = `per2`;
+    colorPanel.dot3.style.left = `per3`;
 }
 
 
-
-
-let darkmod = false;
+var darkmod = false;
 function darkMod() {
-    var bg = document.getElementsByClassName('dkmod-bt');
-    var dot = document.getElementById('dkmod-bt-dot');
+    let bg = document.getElementsByClassName('dkmod-bt');
+    let dot = document.getElementById('dkmod-bt-dot');
     if (darkmod == false) {
         darkmod = true;
         bg[0].style['background-color'] = 'var(--theme-color-08)';
