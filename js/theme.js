@@ -55,20 +55,25 @@ function themeColor(x = 0) {
                 root.style.setProperty("--b", "0%");
                 break;
             case 7:
+                let dot1 = document.getElementById('cldot1');
+                let dot2 = document.getElementById('cldot2');
+                let dot3 = document.getElementById('cldot3');
+                let h = getComputedStyle(root).getPropertyValue('--h');
+                let per1 = h / 3.6;
+                let per2 = getComputedStyle(root).getPropertyValue('--w');
+                let per3 = getComputedStyle(root).getPropertyValue('--b');
+                let i1 = document.getElementById('cli1');
+                let i2 = document.getElementById('cli2');
+                let i3 = document.getElementById('cli3');
+                dot1.style.left = `${per1}`+'%';
+                dot2.style.left = `${per2}`;
+                dot3.style.right = `${per3}`;
+                i1.innerHTML = h + 'deg';
+                i2.innerHTML = per2;
+                i3.innerHTML = per3;
                 break;
         }
     }
-    const colorPanel = {
-        dot1: document.getElementById('cldot1'),
-        dot2: document.getElementById('cldot2'),
-        dot3: document.getElementById('cldot3'),
-        per1: getComputedStyle(root).getPropertyValue('--h'),
-        per2: getComputedStyle(root).getPropertyValue('--w'),
-        per3: getComputedStyle(root).getPropertyValue('--b'),
-    }
-    colorPanel.dot1.style.left = `per1%`;
-    colorPanel.dot2.style.left = `per2`;
-    colorPanel.dot3.style.left = `per3`;
 }
 
 
