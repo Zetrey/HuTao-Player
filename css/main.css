@@ -664,7 +664,7 @@ header {
 }
 
 .color-line-shaderh {
-    background: linear-gradient(in hwb to right, red, green, blue, red);
+    background: linear-gradient(in hwb to right, red, lime, blue, red);
 }
 
 .color-line-shaderw {
