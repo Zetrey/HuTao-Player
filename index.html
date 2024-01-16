@@ -7,8 +7,8 @@
     <link rel="stylesheet" type="text/css" href="./css/theme.css">
     <link rel="stylesheet" type="text/css" href="./css/list.css">
     <link rel="icon" type="image/x-icon" href="./ico/hutao.ico">
-    <script src="./js/main.js"></script>
-    <script src="./js/theme.js"></script>
+    <script src="./js/main.js" defer="defer"></script>
+    <script src="./js/theme.js" defer="defer"></script>
     <style>
         @font-face {
             font-family: 'ITCEDSCR';
@@ -69,7 +69,7 @@
             <div class="show-box-all">
                 <!--左侧功能栏-->
                 <div class="function-box">
-                    <button class="function-button-left">
+                    <button class="function-button-left" title="详情">
                         <svg t="1704794242133" class="inf-icon" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="6800" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="25" height="25">
@@ -78,7 +78,7 @@
                                 p-id="6801"></path>
                         </svg>
                     </button>
-                    <button class="function-button-left" style="margin: 0.3px 0px 0px 4px;">
+                    <button class="function-button-left" style="margin: 0.3px 0px 0px 4px;" title="歌词">
                         <svg t="1704798082637" class="inf-icon" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="878" xmlns:xlink="http://www.w3.org/1999/xlink"
                             width="23" height="23">
@@ -96,7 +96,7 @@
                 </div>
                 <!--右侧功能栏-->
                 <div class="function-box">
-                    <button class="function-button-right">
+                    <button class="function-button-right" title="喜欢">
                         <svg t="1704799801809" class="love-icon" viewBox="0 0 1166 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="4253" width="24" height="24">
                             <path class="function-button-style"
@@ -120,25 +120,25 @@
                 <button class="music-button" id="shang" onclick="pre()" title="上一首">
                     <svg class="inbutton" t="1704632958395" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="5612">
-                        <path
+                        <path class="music-button-path"
                             d="M213.333333 512a52.92 52.92 0 0 0 25.78 45.666667l618.666667 373.28a53.333333 53.333333 0 0 0 80.886667-45.666667V138.72a53.333333 53.333333 0 0 0-80.886667-45.666667L239.133333 466.333333A52.92 52.92 0 0 0 213.333333 512z m-128 405.333333V106.666667a21.333333 21.333333 0 0 1 42.666667 0v810.666666a21.333333 21.333333 0 0 1-42.666667 0z"
-                            fill="#FFFFFF" p-id="5613"></path>
+                            fill="#fff" p-id="5613"></path>
                     </svg>
                 </button>
                 <button class="music-button" id="bf" onclick="ply()" title="播放">
                     <svg class="inbutton" t="1704632639857" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="5316">
-                        <path
+                        <path class="music-button-path"
                             d="M870.2 466.333333l-618.666667-373.28a53.333333 53.333333 0 0 0-80.866666 45.666667v746.56a53.206667 53.206667 0 0 0 80.886666 45.666667l618.666667-373.28a53.333333 53.333333 0 0 0 0-91.333334z"
-                            fill="#FFFFFF" p-id="5317"></path>
+                            fill="#fff" p-id="5317"></path>
                     </svg>
                 </button>
                 <button class="music-button" id="next" onclick="nxt()" title="下一首">
                     <svg class="inbutton" t="1704632916019" viewBox="0 0 1024 1024" version="1.1"
                         xmlns="http://www.w3.org/2000/svg" p-id="5464">
-                        <path
+                        <path class="music-button-path"
                             d="M810.666667 512a52.92 52.92 0 0 1-25.78 45.666667l-618.666667 373.28a53.333333 53.333333 0 0 1-80.886667-45.666667V138.72a53.333333 53.333333 0 0 1 80.886667-45.666667l618.666667 373.28A52.92 52.92 0 0 1 810.666667 512z m128 405.333333V106.666667a21.333333 21.333333 0 0 0-42.666667 0v810.666666a21.333333 21.333333 0 0 0 42.666667 0z"
-                            fill="#FFFFFF" p-id="5465"></path>
+                            fill="#fff" p-id="5465"></path>
                     </svg>
                 </button>
             </div>
@@ -156,21 +156,21 @@
             </div>
             <!--音量-->
             <div class="volumn-box" onmouseover="volumnShow()" onmouseout="volumnHide()">
-                <button class="music-button" id="volumn-button" title="音量">
+                <button class="music-button" id="volumn-button" title="静音" onclick="soundOff()">
                     <svg class="inbutton" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         p-id="2072" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <path
+                        <path class="music-button-path"
                             d="M218.495828 334.609871c-0.390903-0.019443-0.773619-0.019443-1.164522-0.019443L100.022553 334.590428c-21.744233 0-39.087227 17.448394-39.087227 39.001269l0 273.866415c0 21.551852 17.505699 38.999223 39.087227 38.999223l117.308753 0c0.057305 0 0.113587 0 0.171915 0l0 0.153496 287.22056 185.975668c6.824429 5.842055 15.691377 9.354042 25.370831 9.354042 21.590737 0 39.096437-17.505699 39.096437-39.095413 0-1.794879-0.124843-3.551896-0.354064-5.270027L568.836985 183.473685c0.229221-1.718131 0.354064-3.475148 0.354064-5.269004 0-21.590737-17.505699-39.096437-39.096437-39.096437-8.895601 0-17.105586 2.977821-23.682375 7.979742L218.495828 334.609871z"
                             fill="#FFFFFF" p-id="2073"></path>
-                        <path
+                        <path class="music-button-path" id="volumn-curve1"
                             d="M757.858012 953.491133l0.085958 0.075725c123.876332-107.514689 202.211445-266.13329 202.211445-443.041442 0-177.214121-78.603219-336.062965-202.851011-443.61654l-0.11461 0.11461c-4.963035-3.817955-11.17655-6.109138-17.925255-6.109138-16.197914 0-29.322839 13.133112-29.322839 29.321816 0 6.757914 2.28095 12.981662 6.109138 17.926278l-0.333598 0.342808c0.821715 0.706081 1.641383 1.393743 2.462075 2.119267 1.173732 1.202385 2.452865 2.329045 3.817955 3.321652 110.054535 96.710622 179.51349 238.550071 179.51349 396.578224 0 158.02713-69.458955 299.866578-179.51349 396.577201-1.36509 0.99363-2.644223 2.118244-3.817955 3.321652-0.600681 0.533143-1.212618 1.048889-1.822508 1.564635l0.229221 0.230244c-4.152577 5.058203-6.643304 11.530614-6.643304 18.593474 0 16.188704 13.124925 29.321816 29.322839 29.321816C746.317165 960.134437 752.798786 957.651896 757.858012 953.491133z"
                             fill="#FFFFFF" p-id="2074"></path>
-                        <path
+                        <path class="music-button-path" id="volumn-curve2"
                             d="M713.998085 729.35433l0.23843 0.24764c55.380308-56.43022 89.532129-133.76454 89.532129-219.077577 0-85.409229-34.228569-162.800853-89.704045-219.249493l-0.268106 0.267083c-4.886287-3.64604-10.966773-5.821589-17.543561-5.821589-16.197914 0-29.322839 13.133112-29.322839 29.321816 0 6.566556 2.166339 12.657274 5.822612 17.544585l-0.162706 0.170892c0.773619 0.782829 1.547239 1.584078 2.310625 2.38635 0.075725 0.076748 0.152473 0.171915 0.23843 0.248663 43.3626 45.587268 69.983911 107.248629 69.983911 175.132716 0 67.884087-26.621311 129.544425-69.983911 175.131693-0.085958 0.077771-0.162706 0.171915-0.23843 0.24764-0.706081 0.74599-1.422396 1.471514-2.13871 2.214435l0.144286 0.134053c-3.751441 4.926196-5.976108 11.092639-5.976108 17.754363 0 16.188704 13.124925 29.321816 29.322839 29.321816C702.925912 735.328391 709.072913 733.113957 713.998085 729.35433z"
                             fill="#FFFFFF" p-id="2075"></path>
                     </svg>
                 </button>
-                <div class="volumn-line-bar">
+                <div class="volumn-line-bar" title="音量">
                     <div class="volumn-line" id="volumn-line-total">
                         <div class="volumn-line" id="volumn-line-pass">
                             <div class="dot" id="volumn-dot">
@@ -207,31 +207,31 @@
                     </div>
                     <div class="my-list-box">
                         <div class="list-img"></div>
-                        <p2><span class="linefect">New1</span></p2>
+                        <p2><span class="linefect">New2</span></p2>
                         <p3>0首</p3>
                         <button class="list-inf"></button>
                     </div>
                     <div class="my-list-box">
                         <div class="list-img"></div>
-                        <p2><span class="linefect">New1</span></p2>
+                        <p2><span class="linefect">New3</span></p2>
                         <p3>0首</p3>
                         <button class="list-inf"></button>
                     </div>
                     <div class="my-list-box">
                         <div class="list-img"></div>
-                        <p2><span class="linefect">New1</span></p2>
+                        <p2><span class="linefect">New4</span></p2>
                         <p3>0首</p3>
                         <button class="list-inf"></button>
                     </div>
                     <div class="my-list-box">
                         <div class="list-img"></div>
-                        <p2><span class="linefect">New1</span></p2>
+                        <p2><span class="linefect">New5</span></p2>
                         <p3>0首</p3>
                         <button class="list-inf"></button>
                     </div>
                     <div class="my-list-box">
                         <div class="list-img"></div>
-                        <p2><span class="linefect">New1</span></p2>
+                        <p2><span class="linefect">New6</span></p2>
                         <p3>0首</p3>
                         <button class="list-inf"></button>
                     </div>
@@ -288,6 +288,7 @@
                     <!--暗色模式-->
                     <div class="setting-box-02">
                         <p1><span class="linefect">暗色模式</span></p1>
+                        <p2 id="adv1">建议切换暗色模式</p2>
                         <button class="dkmod-bt" onclick="darkMod()">
                             <div id="dkmod-bt-dot"></div>
                         </button>

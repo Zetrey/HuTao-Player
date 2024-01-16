@@ -100,7 +100,6 @@ header {
 }
 
 .list-icon:hover .button-detail {
-    fill: var(--theme-color-10-l);
     transition: all .2s;
 }
 
@@ -114,7 +113,6 @@ header {
 }
 
 .setting-icon:hover .button-detail {
-    fill: var(--theme-color-10-l);
     transition: all .2s;
 }
 
@@ -337,14 +335,14 @@ header {
     margin: 7px;
     border: none;
     border-radius: 50%;
-    background-color: var(--theme-color-10-l);
+    background-color: var(--theme-color-10);
     cursor: pointer;
     box-shadow: 0px 4px 10px var(--theme-color-04);
     transition: all .3s;
 }
 
 .music-button:hover {
-    background-color: var(--theme-color-10-l2);
+    background-color: var(--theme-color-08);
     transition: all .2s;
 }
 
@@ -463,7 +461,7 @@ header {
 }
 
 .linefect {
-    background: linear-gradient(to right, var(--theme-color-10-l), var(--theme-color-10-l)) no-repeat right bottom;
+    background: linear-gradient(to right, var(--theme-color-10), var(--theme-color-10)) no-repeat right bottom;
     background-size: 0px 2px;
     transition: background-size .3s;
 }
@@ -668,11 +666,11 @@ header {
 }
 
 .color-line-shaderw {
-    background: linear-gradient(in hwb to right, gray, white);
+    background: linear-gradient(in hwb to right, hwb(var(--h) 0% 0%), white);
 }
 
 .color-line-shaderb {
-    background: linear-gradient(in hwb to right, black, gray);
+    background: linear-gradient(in hwb to right, black, hwb(var(--h) var(--w) 0%));
 }
 
 .more-color-box>div>i {
@@ -688,24 +686,27 @@ header {
     height: 8px;
     width: 8px;
     background-color: #fff;
+    box-shadow: 0px 0px 6px #bebebe;
     margin: 2px;
     border-radius: 50%;
-    transform: translateX(-50%);
 }
 
 #cldot1 {
     position: absolute;
     left: 0px;
+    transform: translateX(-50%);
 }
 
 #cldot2 {
     position: absolute;
     left: 0px;
+    transform: translateX(-50%);
 }
 
 #cldot3 {
     position: absolute;
     right: 0px;
+    transform: translateX(-50%);
 }
 .setting-box-02{
     position: relative;
@@ -718,7 +719,7 @@ header {
     padding: 10px;
     border-radius: 10px;
     transition: .3s;
-    grid-template-columns: auto 38px;
+    grid-template-columns: auto 96px 43px;
 }
 .setting-box-02>p1 {
     display: block;
@@ -728,10 +729,22 @@ header {
     cursor: default;
     transition: all .4s;
 }
+.setting-box-02>p2{
+    position: relative;
+    right: 0px;
+    width: auto;
+    height: 20px;
+    display: block;
+    margin: auto;
+    font-size: 12px;
+    color: var(--theme-bg-10);
+    transition: .3s;
+}
 .dkmod-bt{
     display: block;
     box-sizing: border-box;
     position: relative;
+    margin: 0px 0px 0px 5px;
     padding: 3px;
     background-color: var(--theme-gray);
     height: 20px;
