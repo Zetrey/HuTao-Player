@@ -28,6 +28,8 @@ function themeColor(x = 0) {
                 mb.style.opacity = 1;
             }
             themecolor = x;
+            var adv = document.getElementById('adv1')//建议
+            adv.style.color = 'var(--theme-bg-10)';
         }
         else {      //展开更多颜色
             box[0].style.height = '200px';
@@ -79,7 +81,7 @@ function themeColor(x = 0) {
         }
     }
 }
-function infUpDate(){   //信息更新
+function infUpDate() {   //信息更新
     var hwb = {
         h: getComputedStyle(root).getPropertyValue('--h'),
         w: getComputedStyle(root).getPropertyValue('--w'),
@@ -99,7 +101,7 @@ function darkMod() {
         dot.style.left = '18px';
         document.documentElement.dataset.theme = 'dark';
     }
-    else{
+    else {
         darkmod = false;
         bg[0].style['background-color'] = 'var(--theme-gray)';
         dot.style.left = '0px';
@@ -112,34 +114,34 @@ let boxh = document.getElementsByClassName('color-line-shaderh'),
     boxw = document.getElementsByClassName('color-line-shaderw'),
     boxb = document.getElementsByClassName('color-line-shaderb');
 
-function mousePos(x, element){
+function mousePos(x, element) {
     var rect = element.getBoundingClientRect();
     var rx = x - rect.left;
     return rx;
 }
-function elementWidth(element){
+function elementWidth(element) {
     var rect = element.getBoundingClientRect();
     var w = rect.width;
     return w;
 }
-function slideDot(hwb){
+function slideDot(hwb) {
     var x = event.clientX;
     var w = elementWidth(boxh[0]);
-    if(hwb == 'h') {
+    if (hwb == 'h') {
         var px = mousePos(x, boxh[0]) - 2;
         tip.t1.style.left = px + 'px';
         var h1 = 360 * px / w;
         root.style.setProperty("--h", parseInt(h1));
         infUpDate();
     }
-    else if(hwb == 'w') {
+    else if (hwb == 'w') {
         var px = mousePos(x, boxw[0]) - 2;
         tip.t2.style.left = px + 'px';
         var w1 = px / w * 100;
         root.style.setProperty("--w", parseInt(w1) + '%');
         infUpDate();
     }
-    else{
+    else {
         var px = mousePos(x, boxb[0]) - 2;
         document.getElementById('cldot3').style.left = px + 'px';
         var b1 = (w - px) / w * 100;
@@ -158,10 +160,10 @@ function slideDot(hwb){
         for (i = 0; i < 6; i++) {
             btico[i].style.fill = '#00000066';
         }
-        if(darkmod==false){
+        if (darkmod == false) {
             adv.style.color = '#3b3b3b';
         }
-        else{
+        else {
             adv.style.color = 'var(--theme-bg-10)';
         }
     }
@@ -177,4 +179,3 @@ function slideDot(hwb){
         }
     }
 }
-
