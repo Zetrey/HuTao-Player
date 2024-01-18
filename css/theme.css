@@ -5,6 +5,7 @@
     --theme-color-06:       hwb(var(--h) var(--w)   var(--b) / 0.6 );
     --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / 0.4 );
     --theme-color-03:       hwb(var(--h) var(--w)   var(--b) / 0.3 );
+    --theme-color-02:       hwb(var(--h) var(--w)   var(--b) / 0.2 );
     --theme-color-01:       hwb(var(--h) var(--w)   var(--b) / 0.1 );
 
     --theme-bg-10: #fff;
@@ -19,17 +20,13 @@
     --img-bg-brightness: 85%;
 }
 html[data-theme = 'dark']{
-    --h: 3;         --w: 25%;       --b: 5%;
-                    --wl: 35%;      --bl: 5%;
-                    --wl2: 50%;     --bl2: 5%;
-    --theme-color-10-l2:    hwb(var(--h) var(--wl2) var(--bl2)     );
-    --theme-color-10-l:     hwb(var(--h) var(--wl)  var(--bl)      );
-    --theme-color-08-l:     hwb(var(--h) var(--wl)  var(--bl) / 0.8);
+    --h: 3;         --w: 35%;       --b: 5%;
     --theme-color-10:       hwb(var(--h) var(--w)   var(--b)       );
     --theme-color-08:       hwb(var(--h) var(--w)   var(--b) / 0.8 );
     --theme-color-06:       hwb(var(--h) var(--w)   var(--b) / 0.6 );
     --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / 0.4 );
     --theme-color-03:       hwb(var(--h) var(--w)   var(--b) / 0.3 );
+    --theme-color-02:       hwb(var(--h) var(--w)   var(--b) / 0.2 );
     --theme-color-01:       hwb(var(--h) var(--w)   var(--b) / 0.1 );
 
     --theme-bg-10: #3b3b3b;
