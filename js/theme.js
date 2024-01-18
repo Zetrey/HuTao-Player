@@ -39,7 +39,7 @@ function themeColor(x = 0) {
         }
         switch (x) {        //修改主题色
             case 0: root.style.setProperty("--h", "3");
-                root.style.setProperty("--w", "25%");
+                root.style.setProperty("--w", "35%");
                 root.style.setProperty("--b", "5%");
                 break;
             case 1: root.style.setProperty("--h", "24");
@@ -157,7 +157,7 @@ function slideDot(hwb) {
     var black = parseInt(hwb.b);
     var adv = document.getElementById('adv1')//建议
     if (white >= (0.6 * black) && white >= 75 && black <= 35) {
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 7; i++) {
             btico[i].style.fill = '#00000066';
         }
         if (darkmod == false) {
@@ -168,7 +168,7 @@ function slideDot(hwb) {
         }
     }
     else {
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 7; i++) {
             btico[i].style.fill = '#fff';
         }
         if (darkmod == true && black > 45) {
