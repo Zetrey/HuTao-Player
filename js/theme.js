@@ -1,16 +1,150 @@
-var root = document.querySelector(":root");
-var themecolor = 0;     //定义默认颜色
-const tip = {
+var root = document.querySelector(":root");     //获取root
+
+let btico = document.getElementsByClassName('music-button-path');//获取dock按钮图标
+let bg = document.getElementsByClassName('setting-bt');     //获取设置按钮背景
+let dot = document.getElementsByClassName('setting-bt-dot') //获取设置按钮dot
+let boxh = document.getElementsByClassName('color-line-shaderh'),
+    boxw = document.getElementsByClassName('color-line-shaderw'),
+    boxb = document.getElementsByClassName('color-line-shaderb');//获取颜色选择器滑块背景
+let bgimg = document.getElementsByClassName('bg-box');      //获取背景图片 
+
+const tip = {           //获取颜色选择器滑块dot
     t1: document.getElementById('cldot1'),
     t2: document.getElementById('cldot2'),
     t3: document.getElementById('cldot3')
 }
-const inf = {
+
+const inf = {           //获取颜色选择器信息
     i1: document.getElementById('cli1'),
     i2: document.getElementById('cli2'),
     i3: document.getElementById('cli3')
 }
-function themeColor(x = 0) {
+
+var bgblur = true;      //定义当前是否背景模糊
+var sdblur = false;     //定义当前是否遮罩模糊
+var darkmod = false;    //定义当前是否暗色模式
+var boxshadow = true;   //定义当前是否启用阴影
+var themecolor = 0;     //定义当前预设颜色[0-6：红-粉]
+
+function settingBt(flag, i) {   //更改设置按钮开关
+    if (flag == true) {
+        bg[i].style['background-color'] = 'var(--theme-color-08)';
+        dot[i].style.left = '18px';
+    }
+    else {
+        bg[i].style['background-color'] = 'var(--theme-gray)';
+        dot[i].style.left = '0px';
+    }
+}
+
+function bgBlur() {             //修改背景模糊
+    if (bgblur == true) {
+        bgblur = false;
+        settingBt(false, 1);
+        root.style.setProperty("--img-bg-blur", "0px");
+        bgimg[0].style.transform = 'none';
+    }
+    else {
+        bgblur = true;
+        settingBt(true, 1);
+        root.style.setProperty("--img-bg-blur", "20px");
+        bgimg[0].style.transform = 'scale(1.05)';
+    }
+}
+
+function sdBlur() {     //修改遮罩模糊
+    if(sdblur==false){
+        sdblur=true;
+        settingBt(true, 2);
+        root.style.setProperty("--sd-filter-blur", "blur(10px)");
+    }
+    else{
+        sdblur=false;
+        settingBt(false, 2);
+        root.style.setProperty("--sd-filter-blur", "none");
+    }
+}
+
+function btIcoColor(flag) {     //修改dock按钮图标颜色
+    if (flag == 'w') {
+        for (i = 0; i < 7; i++) {
+            btico[i].style.fill = '#fff';
+        }
+    }
+    else {
+        for (i = 0; i < 7; i++) {
+            btico[i].style.fill = '#00000066';
+        }
+    }
+}
+
+function advFunction() {        //显示建议
+    var hwb = {     //获取root内h，w，b
+        h: getComputedStyle(root).getPropertyValue('--h'),
+        w: getComputedStyle(root).getPropertyValue('--w'),
+        b: getComputedStyle(root).getPropertyValue('--b')
+    }
+    var white = parseInt(hwb.w);
+    var black = parseInt(hwb.b);
+    var adv = document.getElementById('adv1')
+    if (white >= (0.6 * black) && white >= 75 && black <= 35) {
+        btIcoColor('b');
+        if (darkmod == false) {
+            adv.style.color = '#3b3b3b';
+        }
+        else {
+            adv.style.color = 'var(--theme-bg-10)';
+        }
+    }
+    else {
+        btIcoColor('w');
+        if (darkmod == true && black > 45) {
+            adv.style.color = '#fff';
+        }
+        else {
+            adv.style.color = 'var(--theme-bg-10)';
+        }
+    }
+}
+
+function darkMod() {    //修改暗色模式
+    if (darkmod == false) {
+        darkmod = true;
+        settingBt(true, 0);
+        document.documentElement.dataset.theme = 'dark';
+    }
+    else {
+        darkmod = false;
+        settingBt(false, 0);
+        document.documentElement.dataset.theme = null;
+    }
+    advFunction();
+}
+function boxShadow() {
+    if(boxshadow==true){
+        boxshadow=false;
+        settingBt(false, 3);
+        root.style.setProperty("--a", "0");
+    }
+    else{
+        boxshadow = true;
+        settingBt(true, 3);
+        root.style.setProperty("--a", ".4");
+    }
+}
+
+function infUpDate() {   //颜色选择器信息更新
+    var hwb = {
+        h: getComputedStyle(root).getPropertyValue('--h'),
+        w: getComputedStyle(root).getPropertyValue('--w'),
+        b: getComputedStyle(root).getPropertyValue('--b')
+    }
+    inf.i1.innerHTML = hwb.h + 'deg';
+    inf.i2.innerHTML = hwb.w;
+    inf.i3.innerHTML = hwb.b;
+}
+
+function themeColor(x = 0) {    //预设颜色选择器
     let box = document.getElementsByClassName('setting-box-01'),
         mb = document.getElementById('cmore'),
         cs = document.getElementsByClassName('cspan');
@@ -30,6 +164,7 @@ function themeColor(x = 0) {
             themecolor = x;
             var adv = document.getElementById('adv1')//建议
             adv.style.color = 'var(--theme-bg-10)';
+            btIcoColor('w');
         }
         else {      //展开更多颜色
             box[0].style.height = '200px';
@@ -81,49 +216,19 @@ function themeColor(x = 0) {
         }
     }
 }
-function infUpDate() {   //信息更新
-    var hwb = {
-        h: getComputedStyle(root).getPropertyValue('--h'),
-        w: getComputedStyle(root).getPropertyValue('--w'),
-        b: getComputedStyle(root).getPropertyValue('--b')
-    }
-    inf.i1.innerHTML = hwb.h + 'deg';
-    inf.i2.innerHTML = hwb.w;
-    inf.i3.innerHTML = hwb.b;
-}
-var darkmod = false;    //定义当前是否为暗色模式
-function darkMod() {
-    let bg = document.getElementsByClassName('dkmod-bt');
-    let dot = document.getElementById('dkmod-bt-dot');
-    if (darkmod == false) {
-        darkmod = true;
-        bg[0].style['background-color'] = 'var(--theme-color-08)';
-        dot.style.left = '18px';
-        document.documentElement.dataset.theme = 'dark';
-    }
-    else {
-        darkmod = false;
-        bg[0].style['background-color'] = 'var(--theme-gray)';
-        dot.style.left = '0px';
-        document.documentElement.dataset.theme = null;
-    }
-}
-let btico = document.getElementsByClassName('music-button-path');
 
-let boxh = document.getElementsByClassName('color-line-shaderh'),
-    boxw = document.getElementsByClassName('color-line-shaderw'),
-    boxb = document.getElementsByClassName('color-line-shaderb');
-
-function mousePos(x, element) {
+function mousePos(x, element) {         //返回鼠标与元素left的相对X坐标
     var rect = element.getBoundingClientRect();
     var rx = x - rect.left;
     return rx;
 }
-function elementWidth(element) {
+
+function elementWidth(element) {        //返回元素宽度
     var rect = element.getBoundingClientRect();
     var w = rect.width;
     return w;
 }
+
 function slideDot(hwb) {
     var x = event.clientX;
     var w = elementWidth(boxh[0]);
@@ -148,34 +253,5 @@ function slideDot(hwb) {
         root.style.setProperty("--b", parseInt(b1) + '%');
         infUpDate();
     }
-    var hwb = {
-        h: getComputedStyle(root).getPropertyValue('--h'),
-        w: getComputedStyle(root).getPropertyValue('--w'),
-        b: getComputedStyle(root).getPropertyValue('--b')
-    }
-    var white = parseInt(hwb.w);
-    var black = parseInt(hwb.b);
-    var adv = document.getElementById('adv1')//建议
-    if (white >= (0.6 * black) && white >= 75 && black <= 35) {
-        for (i = 0; i < 7; i++) {
-            btico[i].style.fill = '#00000066';
-        }
-        if (darkmod == false) {
-            adv.style.color = '#3b3b3b';
-        }
-        else {
-            adv.style.color = 'var(--theme-bg-10)';
-        }
-    }
-    else {
-        for (i = 0; i < 7; i++) {
-            btico[i].style.fill = '#fff';
-        }
-        if (darkmod == true && black > 45) {
-            adv.style.color = '#fff';
-        }
-        else {
-            adv.style.color = 'var(--theme-bg-10)';
-        }
-    }
+    advFunction();
 }
