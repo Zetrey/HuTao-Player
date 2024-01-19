@@ -16,7 +16,7 @@
     --theme-negative-10: #000;
     --theme-negative-04: #00000040;
 
-    --theme-gray:#d7d7d7;
+    --theme-gray:#c4c4c4;
 
     --img-bg-brightness: 85%;
     --img-bg-blur: 20px;
@@ -41,7 +41,7 @@ html[data-theme = 'dark']{
     --theme-negative-10: #fff;
     --theme-negative-04: #FFFFFF60;
 
-    --theme-gray: #d7d7d7;
+    --theme-gray: #c9c9c9;
 
     --img-bg-brightness: 45%;
     --img-bg-blur: 40px;
