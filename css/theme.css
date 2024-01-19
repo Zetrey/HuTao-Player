@@ -1,9 +1,10 @@
 :root {
     --h: 3;         --w: 35%;       --b: 5%;
+    --a: .4;
     --theme-color-10:       hwb(var(--h) var(--w)   var(--b)       );
     --theme-color-08:       hwb(var(--h) var(--w)   var(--b) / 0.8 );
     --theme-color-06:       hwb(var(--h) var(--w)   var(--b) / 0.6 );
-    --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / 0.4 );
+    --theme-color-04:/*sdr*/hwb(var(--h) var(--w)   var(--b) / var(--a));
     --theme-color-03:       hwb(var(--h) var(--w)   var(--b) / 0.3 );
     --theme-color-02:       hwb(var(--h) var(--w)   var(--b) / 0.2 );
     --theme-color-01:       hwb(var(--h) var(--w)   var(--b) / 0.1 );
@@ -15,16 +16,20 @@
     --theme-negative-10: #000;
     --theme-negative-04: #00000040;
 
-    --theme-gray:#cacaca;
+    --theme-gray:#d7d7d7;
 
     --img-bg-brightness: 85%;
+    --img-bg-blur: 20px;
+
+    --sd-filter-blur: none;
 }
 html[data-theme = 'dark']{
     --h: 3;         --w: 35%;       --b: 5%;
+    --a: .4;
     --theme-color-10:       hwb(var(--h) var(--w)   var(--b)       );
     --theme-color-08:       hwb(var(--h) var(--w)   var(--b) / 0.8 );
     --theme-color-06:       hwb(var(--h) var(--w)   var(--b) / 0.6 );
-    --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / 0.4 );
+    --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / var(--a) );
     --theme-color-03:       hwb(var(--h) var(--w)   var(--b) / 0.3 );
     --theme-color-02:       hwb(var(--h) var(--w)   var(--b) / 0.2 );
     --theme-color-01:       hwb(var(--h) var(--w)   var(--b) / 0.1 );
@@ -36,7 +41,8 @@ html[data-theme = 'dark']{
     --theme-negative-10: #fff;
     --theme-negative-04: #FFFFFF60;
 
-    --theme-gray: #cacaca;
+    --theme-gray: #d7d7d7;
 
-    --img-bg-brightness: 40%;
+    --img-bg-brightness: 45%;
+    --img-bg-blur: 40px;
 }
