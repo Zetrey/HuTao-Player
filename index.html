@@ -22,7 +22,10 @@
     </style>
 </head>
 
-<body background="./img/HuTao1.png">
+<body>
+    <div class="body-shader">
+        <img class="bg-box" src="./img/HuTao1.png"/>
+    </div>
     <!--顶部-->
     <header>
         <!--标题艺术字部分-->
@@ -409,7 +412,7 @@
                     </div>
                     <!--主题颜色-->
                     <div class="setting-box-01">
-                        <p1><span class="linefect">主题颜色</span></p1>
+                        <p1 class="setting-box-title"><span class="linefect">主题颜色</span></p1>
                         <div class="color-selector">
                             <span class="cspan" id="cs1" role="button" onclick="themeColor(0)" title="红色"></span>
                             <span class="cspan" id="cs2" role="button" onclick="themeColor(1)" title="橙色"></span>
@@ -452,10 +455,30 @@
                     </div>
                     <!--暗色模式-->
                     <div class="setting-box-02">
-                        <p1><span class="linefect">暗色模式</span></p1>
+                        <p1 class="setting-box-title"><span class="linefect">暗色模式</span></p1>
                         <p2 id="adv1">建议切换暗色模式</p2>
-                        <button class="dkmod-bt" onclick="darkMod()">
-                            <div id="dkmod-bt-dot"></div>
+                        <button class="setting-bt" onclick="darkMod()">
+                            <div class="setting-bt-dot" style="left: 0px;"></div>
+                        </button>
+                    </div>
+                    <!--模糊设置-->
+                    <div class="setting-box-03">
+                        <p1 class="setting-box-title"><span class="linefect">背景模糊</span></p1>
+                        <button class="setting-bt" onclick="bgBlur()" style="background-color: var(--theme-color-08);">
+                            <div class="setting-bt-dot" style="left: 18px;"></div>
+                        </button>
+                    </div>
+                    <div class="setting-box-03">
+                        <p1 class="setting-box-title"><span class="linefect">遮罩模糊</span></p1>
+                        <button class="setting-bt" onclick="sdBlur()">
+                            <div class="setting-bt-dot" style="left: 0px;"></div>
+                        </button>
+                    </div>
+                    <!--阴影设置-->
+                    <div class="setting-box-03">
+                        <p1 class="setting-box-title"><span class="linefect">启用阴影</span></p1>
+                        <button class="setting-bt" onclick="boxShadow()" style="background-color: var(--theme-color-08);">
+                            <div class="setting-bt-dot" style="left: 18px;"></div>
                         </button>
                     </div>
                 </div>
