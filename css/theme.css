@@ -4,7 +4,7 @@
     --theme-color-10:       hwb(var(--h) var(--w)   var(--b)       );
     --theme-color-08:       hwb(var(--h) var(--w)   var(--b) / 0.8 );
     --theme-color-06:       hwb(var(--h) var(--w)   var(--b) / 0.6 );
-    --theme-color-04:/*sdr*/hwb(var(--h) var(--w)   var(--b) / var(--a));
+    --theme-color-04:       hwb(var(--h) var(--w)   var(--b) / var(--a));/*sdr*/
     --theme-color-03:       hwb(var(--h) var(--w)   var(--b) / 0.3 );
     --theme-color-02:       hwb(var(--h) var(--w)   var(--b) / 0.2 );
     --theme-color-01:       hwb(var(--h) var(--w)   var(--b) / 0.1 );
@@ -45,4 +45,6 @@ html[data-theme = 'dark']{
 
     --img-bg-brightness: 45%;
     --img-bg-blur: 40px;
+
+    --sd-filter-blur: none;
 }

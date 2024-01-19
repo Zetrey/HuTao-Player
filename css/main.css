@@ -3,6 +3,7 @@
     outline: 0;
     touch-action: pan-y;
 }
+
 body {
     position: absolute;
     padding: 0px 120px 0px 120px;
@@ -15,12 +16,14 @@ body {
     overflow: hidden;
     transition: .2s;
 }
-.body-shader{
+
+.body-shader {
     position: absolute;
     height: 100%;
     width: 100%;
 }
-.bg-box{
+
+.bg-box {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -382,7 +385,7 @@ header {
     z-index: 10;
 }
 
-#volumn-curve3{
+#volumn-curve3 {
     display: none;
 }
 
@@ -449,9 +452,11 @@ header {
     height: 100%;
     overflow: hidden;
 }
-.pad2-box::-webkit-scrollbar{
+
+.pad2-box::-webkit-scrollbar {
     width: 0px;
 }
+
 .pad2-box:hover {
     overflow-y: auto;
 }
@@ -768,7 +773,7 @@ header {
     transition: ease .2s;
 }
 
-.setting-box-03{
+.setting-box-03 {
     position: relative;
     display: grid;
     width: 100%;

@@ -41,21 +41,27 @@
     padding: 5px;
     cursor: pointer;
 }
-.list-img:hover .list-icon-hover{
+
+.list-img:hover .list-icon-hover {
     display: block;
 }
-.list-img:hover .list-icon-static{
+
+.list-img:hover .list-icon-static {
     display: none;
 }
+
 .list-icon-static {
     display: block;
 }
-.list-icon-hover{
+
+.list-icon-hover {
     display: none;
 }
+
 .list-icon-on {
     display: none;
 }
+
 .list-inf {
     grid-area: 1/3 / 3/4;
     box-sizing: border-box;
@@ -73,12 +79,13 @@
 .list-more-icon-i {
     fill: var(--theme-color-10);
 }
-.list-inf:hover{
+
+.list-inf:hover {
     background-color: var(--theme-color-01);
     transition: .2s;
 }
-.list-inf:active{
+
+.list-inf:active {
     background-color: var(--theme-color-02);
     transition: .2s;
 }
-
