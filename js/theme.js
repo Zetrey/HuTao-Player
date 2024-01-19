@@ -53,13 +53,13 @@ function bgBlur() {             //修改背景模糊
 }
 
 function sdBlur() {     //修改遮罩模糊
-    if(sdblur==false){
-        sdblur=true;
+    if (sdblur == false) {
+        sdblur = true;
         settingBt(true, 2);
         root.style.setProperty("--sd-filter-blur", "blur(10px)");
     }
-    else{
-        sdblur=false;
+    else {
+        sdblur = false;
         settingBt(false, 2);
         root.style.setProperty("--sd-filter-blur", "none");
     }
@@ -121,12 +121,12 @@ function darkMod() {    //修改暗色模式
     advFunction();
 }
 function boxShadow() {
-    if(boxshadow==true){
-        boxshadow=false;
+    if (boxshadow == true) {
+        boxshadow = false;
         settingBt(false, 3);
         root.style.setProperty("--a", "0");
     }
-    else{
+    else {
         boxshadow = true;
         settingBt(true, 3);
         root.style.setProperty("--a", ".4");
