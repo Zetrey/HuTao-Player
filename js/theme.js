@@ -1,8 +1,8 @@
 var root = document.querySelector(":root");     //获取root
 
 let btico = document.getElementsByClassName('music-button-path');//获取dock按钮图标
-let bg = document.getElementsByClassName('setting-bt');     //获取设置按钮背景
-let dot = document.getElementsByClassName('setting-bt-dot') //获取设置按钮dot
+let bg = document.getElementsByClassName('setting-bt');         //获取设置按钮背景
+let dot = document.getElementsByClassName('setting-bt-dot')     //获取设置按钮dot
 let boxh = document.getElementsByClassName('color-line-shaderh'),
     boxw = document.getElementsByClassName('color-line-shaderw'),
     boxb = document.getElementsByClassName('color-line-shaderb');//获取颜色选择器滑块背景
