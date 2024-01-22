@@ -6,7 +6,7 @@ let dot = document.getElementsByClassName('setting-bt-dot')     //获取设置�
 let boxh = document.getElementsByClassName('color-line-shaderh'),
     boxw = document.getElementsByClassName('color-line-shaderw'),
     boxb = document.getElementsByClassName('color-line-shaderb');//获取颜色选择器滑块背景
-let bgimg = document.getElementsByClassName('bg-box');      //获取背景图片 
+let bgimg = document.getElementsByClassName('bg-box');          //获取背景图片 
 
 const tip = {           //获取颜色选择器滑块dot
     t1: document.getElementById('cldot1'),
